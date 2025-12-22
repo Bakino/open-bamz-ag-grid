@@ -1,0 +1,30 @@
+/* I don't know why but this element break body height 
+(add space below scroll if there is many grid in the page)*/
+.ag-aria-description-container {
+    display: none;
+}
+
+/* mobile render */ 
+.ag-grid-mobile .ag-header {
+    display: none ;
+}
+
+.ag-grid-mobile .ag-root-wrapper {
+    background: transparent;
+    border: 0;
+}
+
+.ag-grid-mobile .ag-row-first {
+    border-radius: 5px 5px 0 0;
+    border-top: var(--ag-row-border);
+}
+
+.ag-grid-mobile .ag-row {
+    border-right: var(--ag-row-border);
+    border-left: var(--ag-row-border);
+}
+
+.ag-grid-mobile .ag-row-last {
+    border-radius: 0 0 5px 5px;
+}
+

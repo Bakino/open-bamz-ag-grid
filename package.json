@@ -1,0 +1,17 @@
+{
+  "name": "open-bamz-ag-grid",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "description": "Open BamZ ag grid plugin",
+  "dependencies": {
+    "ag-grid-community": "^35.0.0",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1"
+  }
+}

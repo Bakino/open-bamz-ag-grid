@@ -1,0 +1,58 @@
+{
+  "routing": "HASH",
+  "viewsPath": "views",
+  "routes": [
+    {
+      "url": "/",
+      "path": "root",
+      "subRoutes": [
+        {
+          "url": "/settings",
+          "path": "settings"
+        },
+        {
+          "url": "/welcome",
+          "path": "welcome",
+          "defaultChild": true
+        },
+        {
+          "url": "/messages",
+          "path": "messages"
+        },
+        {
+          "url": "/help",
+          "path": "help"
+        },
+        {
+          "url": "/templates",
+          "path": "templates"
+        }
+      ]
+    },
+     {
+      "url": "/popup-smtp{/:code}",
+      "path": "popup-smtp"
+    },
+    {
+      "url": "/popup-message-detail/:id",
+      "path": "popup-message-detail"
+    },
+    {
+      "url": "/popup-send-message",
+      "path": "popup-send-message"
+    },
+    {
+      "url": "/popup-template{/:code}",
+      "path": "popup-template"
+    },
+    {
+      "url": "/popup-template-send-mail/:template",
+      "path": "popup-template-send-mail"
+    }
+  ],
+  "extensions": [
+    { "url": "https://cdn.jsdelivr.net/gh/Bakino/open-bamz-database@68c8323a62db4aa1253000e8033aa90dc8d1ce5e/front/lib/viewz-dbadmin.mjs" },
+    { "url": "https://cdn.jsdelivr.net/gh/Bakino/open-bamz-bootstrap@e2d044437e3ef435b64255c2d117caa85e538ec7/front/lib/viewz-bootstrap5.mjs" },
+    { "url": "/plugin/open-bamz-ag-grid/lib/viewz-ag-grid.mjs" }
+  ]
+} 

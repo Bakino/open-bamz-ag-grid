@@ -1,0 +1,1463 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div
+      id="ik8a"
+      class="col-4 h-100 overflow-auto bg-secondary-subtle col-xl-3 col-lg-3 d-md-none d-sm-none d-none d-lg-block col-xxl-3 ps-xxl-5 ps-5 pt-5 pb-5"
+    >
+      <nav
+        id="navbar"
+        class="h-100 flex-column align-items-stretch pe-4 border-end"
+      >
+        <span id="i0vidu" class="fw-bold">AG Grid plugin</span>
+        <nav id="ii1vs" class="nav flex-column mt-2">
+          <a href="#usage" id="iv2hh" class="nav-link">Usage</a>
+          <nav id="iny9o2" class="nav flex-column">
+            <a href="#usage-settings" id="igugwj" class="nav-link ms-2 my-1">
+              Plain Javascript
+            </a>
+            <a
+              href="#component-section"
+              id="component-link"
+              class="nav-link ms-2 my-1"
+            >
+              &lt;ag-grid&gt; component
+            </a>
+            <a
+              href="#default-column"
+              id="default-column-link"
+              class="nav-link ms-2 my-1"
+            >
+              Default column
+            </a>
+            <a
+              href="#grid-events"
+              id="grid-events-link"
+              class="nav-link ms-2 my-1"
+            >
+              Grid events
+            </a>
+            <a href="#i9omff" id="imglsl" class="nav-link ms-2 my-1">
+              CopyRenderer
+            </a>
+            <a
+              href="#usage-send-message"
+              id="imglfsl"
+              class="nav-link ms-2 my-1"
+            >
+              ViewZ integration
+            </a>
+            <a href="#iaks6hq" id="imgslsl" class="nav-link ms-2 my-1">
+              ViewZ: rendering inside the column
+            </a>
+            <a
+              href="#viewz-get-row-data"
+              id="viewz-get-row-data-link"
+              class="nav-link ms-2 my-1"
+            >
+              ViewZ: get row data
+            </a>
+            <a
+              href="#viewz-grid-event"
+              id="viewz-grid-event-link"
+              class="nav-link ms-2 my-1"
+            >
+              ViewZ: grid event
+            </a>
+            <a
+              href="#db-configure-column"
+              id="db-configure-column-link"
+              class="nav-link ms-2 my-1"
+            >
+              Database: configure column from database
+            </a>
+            <a href="#i8stsi" id="imgslsl-2" class="nav-link ms-2 my-1">
+              Database: editable column from database
+            </a>
+            <a
+              href="#db-data-source"
+              id="db-data-source-link"
+              class="nav-link ms-2 my-1"
+            >
+              Database: data source
+            </a>
+            <a href="#visual-editor" id="i0mp5y" class="nav-link ms-2 my-1">
+              Visual editor
+            </a>
+          </nav>
+        </nav>
+        <nav id="ii1vs-2" class="nav flex-column mt-2">
+          <a href="#extensions" id="iv2hh-2" class="nav-link">Extensions</a>
+          <nav id="iomcst" class="nav flex-column">
+            <a href="#i8stsi-2" id="imgslsl-2-2" class="nav-link ms-2 my-1">
+              How to register an extension
+            </a>
+            <a href="#ijjqpn" id="imglsl-2" class="nav-link ms-2 my-1">
+              Add new components
+            </a>
+            <a
+              href="#dynamic-components"
+              id="dynamic-components-link"
+              class="nav-link ms-2 my-1"
+            >
+              Add dynamic components
+            </a>
+            <a
+              href="#transform-column"
+              id="transform-column-link"
+              class="nav-link ms-2 my-1"
+            >
+              Transform column option
+            </a>
+            <a
+              href="#extends-aggrid"
+              id="extends-aggrid-link"
+              class="nav-link ms-2 my-1"
+            >
+              Extends &lt;ag-grid&gt;
+            </a>
+          </nav>
+        </nav>
+      </nav>
+    </div>
+    <div
+      id="ih5ah"
+      class="h-100 overflow-auto col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 col-xxl-9 pt-5 ps-5 pb-5 pe-5"
+    >
+      <div
+        data-bs-spy="scroll"
+        data-bs-target="#navbar"
+        data-bs-smooth-scroll="true"
+        class="row"
+      >
+        <div id="usersApi" class="col-12">
+          <h3 id="i67er">AG Grid plugin</h3>
+          <p id="ioyf2">
+            This plugin integrate the
+            <a href="https://www.ag-grid.com/" target="_blank">
+              AG Grid library
+            </a>
+          </p>
+          <p>
+            The version of AG Grid included is the Community Edition
+            version&nbsp;33.2.4
+          </p>
+        </div>
+        <div id="backOffice" class="col-12">
+          <h4 id="usage">Usage</h4>
+          <p>This section describe how to use the plugin to create grids</p>
+        </div>
+        <div id="backOffice-settings" class="col-12">
+          <h5 id="usage-settings">Plain javascript</h5>
+          <p id="if83i">
+            The most basic way to create a grid is to call the
+            <code>agGrid.createGrid</code>
+            function
+          </p>
+          <p>
+            To create a basic grid, utilize the
+            <code>agGrid.createGrid</code>
+            function.
+          </p>
+          <p id="ifywth">
+            This method provides direct access to AG Grid's core functionality.
+            For comprehensive configuration options, please refer to the
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/getting-started/"
+              target="_blank"
+            >
+              official AG Grid documentation
+            </a>
+            .
+          </p>
+          <div id="iij56k-2" class="row">
+            <div id="ibenpa" class="col-12 col-lg-6">
+              <h6>Basic example</h6>
+              <div id="basic-js-example"></div>
+            </div>
+            <div id="ijj4di" class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre id="ioyhdi-2"><!-- 
+<style>
+  /* the grid container must have a height */
+  #basic-js-example { height: 200px }
+</style>
+<div id="basic-js-example"></div>
+<script>
+  // Register the modules (https://www.ag-grid.com/javascript-data-grid/modules/)
+  agGrid.ModuleRegistry.registerModules([
+      agGrid.AllCommunityModule, 
+  ]);
+  // Prepare grid option
+  const gridOptions = {
+      // 2 columns
+      columnDefs : [
+          { field:"name" },
+          { field:"race" },
+      ],
+      // data to show
+      rowData: view.data.lotr.main_characters
+  }
+  //Create the grid
+  agGrid.grid = agGrid.createGrid(document.getElementById("basic-js-example"), gridOptions);
+</script>
+              --></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+        <div id="component-section" class="col-12">
+          <h5 id="component-heading" class="mt-4">&lt;ag-grid&gt; component</h5>
+          <p id="ibxqbj">
+            The plugin provides an
+            <code>&lt;ag-grid&gt;</code>
+            custom component for seamless integration within markup.
+          </p>
+          <h6>Configuration</h6>
+          <p>
+            The
+            <code>&lt;ag-grid&gt;</code>
+            component accepts all standard
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/grid-options"
+              target="_blank"
+            >
+              grid options
+            </a>
+            as attributes. When specifying attributes:
+          </p>
+          <ul>
+            <li>
+              Convert
+              <code>camelCase</code>
+              options to
+              <code>lower-case</code>
+              format (e.g.,
+              <code>cellRenderer</code>
+              becomes
+              <code>cell-renderer</code>
+              )
+            </li>
+            <li>
+              For nested properties, use dot notation syntax (e.g., to set
+              <code>rowSelection: { mode: "singleRow"}</code>
+              , specify
+              <code>row-selection.mode="singleRow"</code>
+              )
+            </li>
+          </ul>
+          <h6>Column Definition</h6>
+          <p>
+            Define columns by nesting
+            <code>&lt;ag-column&gt;</code>
+            elements within the parent
+            <code>&lt;ag-grid&gt;</code>
+            component. Each
+            <code>&lt;ag-column&gt;</code>
+            element supports all available
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/column-properties/"
+              target="_blank"
+            >
+              column configuration
+            </a>
+            options as attributes.
+          </p>
+          <h6>Data Binding</h6>
+          <p>
+            Apply data to the grid by setting the
+            <code>rowData</code>
+            property on the
+            <code>&lt;ag-grid&gt;</code>
+            element.
+
+            <br />
+            Integration with viewz binding functionality is addressed in
+            subsequent sections.
+          </p>
+          <div id="ilf17n" class="row">
+            <div class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid id="component-example">
+                <ag-column field="name"></ag-column>
+                <ag-column field="race"></ag-column>
+              </ag-grid>
+            </div>
+            <div class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<style>
+  /* the grid container must have a height */
+  #component-example { height: 200px }
+</style>
+<ag-grid id="component-example">
+  <ag-column field="name"></ag-column>
+  <ag-column field="race"></ag-column>
+</ag-grid>
+<script>
+  // set the data of the grid
+  document.getElementById("component-example").rowData = view.data.lotr.main_characters ;
+</script>
+              --></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+        <div id="default-column" class="col-12">
+          <h5 id="default-column-heading" class="mt-4">
+            Default Column Configuration
+          </h5>
+          <p>
+            The
+            <code>&lt;ag-grid&gt;</code>
+            component provides a mechanism for establishing
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/column-definitions/#default-column-definitions"
+              target="_blank"
+            >
+              default column settings
+            </a>
+            through the
+            <code>&lt;ag-default-column&gt;</code>
+            element. This element functions similarly to
+            <code>&lt;ag-column&gt;</code>
+            but applies the specified configuration globally to all columns in
+            the grid. This approach enables consistent styling and behavior
+            across columns while reducing redundant configuration.
+          </p>
+          <div id="i43fva" class="row">
+            <div class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid id="default-col-example">
+                <ag-default-column
+                  width="150"
+                  cell-style.font-weight="bold"
+                ></ag-default-column>
+                <ag-column field="name"></ag-column>
+                <ag-column field="race"></ag-column>
+              </ag-grid>
+            </div>
+            <div class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<style>
+  /* the grid container must have a height */
+  #default-col-example { height: 200px }
+</style>
+<ag-grid id="default-col-example">
+  <ag-default-column
+        width="150"
+        cell-style.font-weight="bold"
+      ></ag-default-column>
+  <ag-column field="name"></ag-column>
+  <ag-column field="race"></ag-column>
+</ag-grid>
+<script>
+  // set the data of the grid
+  document.getElementById("default-col-example").rowData = view.data.lotr.main_characters ;
+</script>
+              --></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+        <div id="grid-events" class="col-12">
+          <h5 id="grid-events-heading" class="mt-4">Grid events</h5>
+          <p>
+            The
+            <code>&lt;ag-grid&gt;</code>
+            component provides full support for
+            <a href="https://www.ag-grid.com/javascript-data-grid/grid-events/">
+              all native AG Grid events
+            </a>
+            . Event handling is implemented through the standard DOM event
+            model, allowing developers to attach listeners using the
+            <code>addEventListener</code>
+            method on the
+            <code>&lt;ag-grid&gt;</code>
+            element.
+          </p>
+          <div class="row">
+            <div id="ihrhuv" class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid id="example-events">
+                <ag-column field="name"></ag-column>
+                <ag-column field="race"></ag-column>
+              </ag-grid>
+            </div>
+            <div id="ib6szj" class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<style>
+  /* the grid container must have a height */
+  #example-events { height: 200px }
+</style>
+
+<ag-grid id="example-events">
+  <ag-column field="name"></ag-column>
+  <ag-column field="race"></ag-column>
+</ag-grid>
+
+
+<script>
+  // set the data of the grid
+  document.getElementById("example-events").rowData = view.data.lotr.main_characters ;
+
+  // add listener to rowClicked
+  document.getElementById("example-events").addEventListener("rowClicked", 
+      (ev)=> window.alert(JSON.stringify(ev.data))) ;
+</script>
+              --></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+        <div id="i9omff" class="col-12">
+          <h5 id="usage-smtp-settings" class="mt-4">CopyRenderer</h5>
+          <p>
+            The AG Grid plugin includes a specialized Cell Renderer component
+            that enhances cell functionality with clipboard integration
+            capabilities.
+          </p>
+          <p id="i1dm2h">
+            The CopyRenderer adds a small copy button within each cell that,
+            when activated, copies the cell's content to the system clipboard.
+            This feature provides users with a convenient mechanism for
+            extracting grid data without manual text selection.
+          </p>
+          <div id="ikfwev" class="row">
+            <div id="iewv9o" class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid id="copy-renderer-example">
+                <ag-column
+                  field="name"
+                  id="ixi8sb"
+                  cell-renderer="CopyRenderer"
+                ></ag-column>
+                <ag-column
+                  field="race"
+                  id="i60g97"
+                  cell-renderer="CopyRenderer"
+                ></ag-column>
+              </ag-grid>
+            </div>
+            <div id="ioj72d" class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<ag-grid id="copy-renderer-example">
+      <ag-column field="name"
+        cell-renderer="CopyRenderer"
+      ></ag-column>
+      <ag-column field="race"
+        cell-renderer="CopyRenderer"
+      ></ag-column>
+</ag-grid>
+
+
+<script>
+    // You can use it in plain Javascript too
+    const gridOptions = {
+        columnDefs : [
+            { field:"name", cellRenderer: agGridBamzComponents.CopyRenderer },
+            { field:"race", cellRenderer: agGridBamzComponents.CopyRenderer },
+        ]
+    }
+</script>
+              --></pre>
+              </code>
+            </div>
+          </div>
+          <code lang="json"></code>
+        </div>
+        <div id="igw10j" class="col-12">
+          <h5 id="usage-send-message" class="mt-5">ViewZ integration</h5>
+          <p>
+            The AG Grid plugin features comprehensive integration with the ViewZ
+            framework, enabling seamless data binding and reactivity
+            capabilities.
+          </p>
+          <p>
+            When operating within a ViewZ application, developers can leverage
+            ViewZ's binding syntax to connect data directly to the grid:
+          </p>
+          <code lang="html">
+            <pre><!-- 
+<ag-grid row-data="${lotr.main_characters}">
+              --></pre>
+          </code>
+          <p>
+            This declarative approach establishes a live connection between the
+            application's data model and the grid display.
+          </p>
+          <h6>Automatic Reactivity</h6>
+          <p>
+            A key advantage of the ViewZ integration is automatic data
+            synchronization. The plugin implements a reactive update system
+            that:
+          </p>
+          <ul>
+            <li>Monitors changes to bound data collections</li>
+            <li>
+              Automatically refreshes grid content when the underlying data is
+              modified
+            </li>
+            <li>
+              Maintains grid state (selection, sorting, filtering) during data
+              updates
+            </li>
+            <li>Optimizes rendering to update only affected rows</li>
+          </ul>
+          This reactivity mechanism eliminates the need for manual refresh calls
+          after data manipulation, ensuring the grid always presents the current
+          state of the application data.
+
+          <h6>Performance Considerations</h6>
+          <p>
+            The integration employs efficient change detection algorithms to
+            minimize DOM operations and maintain optimal performance even with
+            large datasets or frequent updates.
+          </p>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid row-data="${lotr.main_characters}" id="i50hak">
+                <ag-column field="name"></ag-column>
+                <ag-column field="race"></ag-column>
+              </ag-grid>
+            </div>
+            <div class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<ag-grid id="izqt14" row-data="${lotr.main_characters}">
+    <ag-column field="name" id="ij3pj5"></ag-column>
+    <ag-column field="race"></ag-column>
+</ag-grid>
+              --></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+        <div id="iaks6hq" class="col-12">
+          <h5 class="mt-5">ViewZ : rendering inside the column</h5>
+          <p>
+            The plugin extends ViewZ's templating capabilities to column
+            content, enabling rich, data-driven cell rendering without custom
+            cell renderers.
+          </p>
+          <p>
+            Implementation Column content can be defined declaratively using
+            ViewZ template syntax within the
+            <code>&lt;ag-column&gt;</code>
+          </p>
+
+          elements:
+          <div id="i9rt1i" class="row">
+            <div id="iteu0q" class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid id="izqt14" row-data="${lotr.main_characters}">
+                <ag-column
+                  field="name"
+                  id="ij3pj5"
+                  header-name="Custom name display"
+                >
+                  <span class="me-1">The name is</span>
+                  <strong>${name}</strong>
+                </ag-column>
+                <ag-column field="race" id="ihn1hk">
+                  <span
+                    z-class="${race=='Hobbit'?'text-bg-primary':'text-bg-secondary'}"
+                    class="badge"
+                  >
+                    ${race}
+                  </span>
+                </ag-column>
+              </ag-grid>
+            </div>
+            <div id="it5lrk" class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<ag-grid row-data="${lotr.main_characters}">
+    <ag-column field="name" id="ij3pj5" header-name="Custom name display">
+      The name is <strong>${name}</strong>
+    </ag-column>
+
+    <ag-column field="race" id="ihn1hk">
+        <span
+          z-class="${race=='Hobbit'?'text-bg-primary':'text-bg-secondary'}"
+          class="badge">
+          ${race}
+        </span>
+    </ag-column>
+</ag-grid>
+              --></pre>
+              </code>
+            </div>
+          </div>
+          <h6>Features</h6>
+          <p>This templating approach offers several advantages:</p>
+          <ul>
+            <li>
+              Direct access to row data variables within the template using
+              ${variableName} syntax
+            </li>
+            <li>
+              Support for conditional rendering and styling through ViewZ
+              expressions
+            </li>
+            <li>
+              Integration with ViewZ directives such as z-class for dynamic
+              class application
+            </li>
+            <li>Automatic template compilation and efficient rendering</li>
+          </ul>
+        </div>
+        <code></code>
+        <div id="viewz-get-row-data" class="col-12">
+          <h5 class="mt-5">ViewZ : get row data</h5>
+          <p id="iz4rpx">
+            When implementing event handlers within column templates, the plugin
+            provides access to the corresponding row data through the
+            <code>itemData</code>
+            contextual property.
+          </p>
+          <div id="i6ub1r" class="row">
+            <div class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid row-data="${lotr.main_characters}" id="izebhj">
+                <ag-column field="name" header-name="Custom name display">
+                  <span class="me-1">The name is</span>
+                  <strong>${name}</strong>
+                </ag-column>
+                <ag-column id="i72p1h" header-name="Action">
+                  <button
+                    type="button"
+                    z-on-click="view.nameToUpper(itemData)"
+                    class="btn btn-sm btn-outline-primary"
+                  >
+                    To upper case
+                  </button>
+                </ag-column>
+              </ag-grid>
+            </div>
+            <div id="iz1mk5" class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<ag-grid row-data="${lotr.main_characters}">
+    <ag-column field="name" header-name="Custom name display">
+        <span class="me-1">The name is</span>
+        <strong>${name}</strong>
+    </ag-column>
+    <ag-column header-name="Action">
+        <button type="button" class="btn btn-sm btn-outline-primary"
+          z-on-click="view.nameToUpper(itemData)">
+          To upper case
+        </button>
+    </ag-column>
+</ag-grid>
+              --></pre>
+              </code>
+              <code lang="javascript">
+                <pre>
+view.nameToUpper = (character)=&gt;{
+    character.name = character.name.toUpperCase() ;
+}
+</pre
+                >
+              </code>
+            </div>
+          </div>
+          <code lang="json"></code>
+        </div>
+        <div id="viewz-grid-event" class="col-12">
+          <h5 class="mt-5">ViewZ : grid event</h5>
+          <p>
+            The ViewZ integration extends to the grid level, allowing developers
+            to handle native AG Grid events through the ViewZ event binding
+            system.
+          </p>
+          <p>
+            Grid events can be bound directly to ViewZ methods using the
+            <code>z-on-[eventName]</code>
+            attribute syntax on the
+            <code>&lt;ag-grid&gt;</code>
+            element:
+          </p>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid
+                row-data="${lotr.main_characters}"
+                id="grid-viewz-event"
+                z-on-row-clicked="view.rowClicked(itemData)"
+              >
+                <ag-column field="name"></ag-column>
+                <ag-column field="race"></ag-column>
+              </ag-grid>
+            </div>
+            <div id="ipfpfu" class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<ag-grid
+  row-data="${lotr.main_characters}"
+  z-on-row-clicked="view.rowClicked(itemData)"
+>
+  <ag-column field="name"></ag-column>
+  <ag-column field="race"></ag-column>
+</ag-grid>
+              --></pre>
+              </code>
+              <code lang="javascript">
+                <pre>
+view.rowClicked = (itemData)=&gt;{
+    dialogs.info(itemData) ;
+}
+</pre
+                >
+              </code>
+            </div>
+          </div>
+          <p>
+            In grid event handlers, the ViewZ binding system provides access to:
+          </p>
+          <ul>
+            <li>
+              The
+              <code>itemData</code>
+              property, containing the data object for the relevant row
+            </li>
+            <li>
+              The original AG Grid
+              <code>event</code>
+              object, which contains additional metadata such as column
+              information, cell position, and other context-specific details
+            </li>
+          </ul>
+          <p></p>
+          <p>
+            To receive these object in the handler function, give them in the
+            bind property :
+          </p>
+          <ul>
+            <li>
+              <code>view.rowClicked(itemData)</code>
+              : the function receive the
+              <code>itemData</code>
+            </li>
+            <li>
+              <code>view.rowClicked(event)</code>
+              : the function receive the AG Grid
+              <code>event</code>
+              object
+            </li>
+            <li>
+              <code>view.rowClicked(event, itemData)</code>
+              : the function receive both the
+              <code>itemData</code>
+              and AG Grid
+              <code>event</code>
+              object
+            </li>
+          </ul>
+        </div>
+        <div id="db-configure-column" class="col-12">
+          <h5 class="mt-5">Database : configure column from database</h5>
+          <p>
+            The plugin provides direct database metadata integration
+            capabilities, allowing automatic column configuration based on
+            database schema information.
+          </p>
+          <h6>Implementation</h6>
+          <p>
+            Columns can be configured to inherit settings from database metadata
+            by specifying the db-table and db-column attributes:
+          </p>
+          <p>
+            If you are using a database, you can automatically configure a
+            column using the table and column name by giving the db-table and
+            db-column attributes (optionally give the db-schema if it is not the
+            public schema)
+          </p>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid row-data="${lotr.main_characters}" id="iebezl">
+                <ag-column field="name"></ag-column>
+              </ag-grid>
+            </div>
+            <div id="i46tfp" class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<ag-grid row-data="${lotr.main_characters}">
+    <ag-column db-table="character" db-column="name"></ag-column>
+</ag-grid>
+              --></pre>
+              </code>
+            </div>
+          </div>
+          <h6>Configuration Parameters</h6>
+          The following attributes control database integration:
+
+          <table class="table">
+            <tbody>
+              <tr>
+                <th>Attribute</th>
+                <th>Required</th>
+                <th>Description</th>
+              </tr>
+              <tr>
+                <td>db-table</td>
+                <td>Yes</td>
+                <td>Specifies the database table name</td>
+              </tr>
+              <tr>
+                <td>db-column</td>
+                <td>Yes</td>
+                <td>Specifies the column name within the table</td>
+              </tr>
+              <tr>
+                <td>db-schema</td>
+                <td>No</td>
+                <td>
+                  Specifies the database schema (defaults to "public" if
+                  omitted)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <h6>Metadata Inheritance</h6>
+          <p>
+            When database integration is configured, the column automatically
+            inherits various properties from the database metadata:
+          </p>
+          <ul>
+            <li>Column header (derived from column comment or name)</li>
+            <li>Formatting rules (based on data type)</li>
+            <li>Filtering capabilities</li>
+          </ul>
+          <p>
+            This feature significantly reduces configuration overhead and
+            ensures consistency between the application and database schema.
+          </p>
+        </div>
+        <div id="i8stsi" class="col-12">
+          <h5 class="mt-5">Database : editable column from database</h5>
+          <p>
+            The database integration extends to cell editing functionality,
+            automatically configuring appropriate editors based on the database
+            column type.
+          </p>
+          <p>
+            To enable database-driven editing, configure the column with
+            database metadata attributes and set it as editable:
+          </p>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid
+                row-data="${lotr.main_characters}"
+                id="iwpvqh"
+                single-click-edit=""
+              >
+                <ag-column
+                  field="name"
+                  editable=""
+                  cell-editor="DbFieldCellEditor"
+                  cell-editor-params.type="text"
+                  id="i3f9ql"
+                  single-click-edit=""
+                ></ag-column>
+              </ag-grid>
+            </div>
+            <div class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<ag-grid row-data="${lotr.main_characters}">
+    <ag-column db-table="character" db-column="name"></ag-column>
+</ag-grid>
+              --></pre>
+              </code>
+            </div>
+          </div>
+          <p>
+            The plugin automatically selects the appropriate editor component
+            based on the database column type:
+          </p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Database Type</th>
+                <th scope="col">Editor Component</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">VARCHAR, TEXT</th>
+                <td>Text input field</td>
+              </tr>
+              <tr>
+                <th scope="row">MULTILINE TEXT</th>
+                <td>Multiline text input field</td>
+              </tr>
+              <tr>
+                <th scope="row">INTEGER, BIGINT</th>
+                <td>Numeric input with integer mask</td>
+              </tr>
+              <tr>
+                <th scope="row">DECIMAL, NUMERIC, FLOAT</th>
+                <td>Numeric input with decimal mask</td>
+              </tr>
+              <tr>
+                <th scope="row">EMAIL</th>
+                <td>Numeric input with e-mail mask</td>
+              </tr>
+              <tr>
+                <th scope="row">PHONE</th>
+                <td>Numeric input with phone mask</td>
+              </tr>
+              <tr>
+                <th scope="row">BOOLEAN</th>
+                <td>Checkbox</td>
+              </tr>
+              <tr>
+                <th scope="row">DATE</th>
+                <td>Date picker</td>
+              </tr>
+              <tr>
+                <th scope="row">TIMESTAMP</th>
+                <td>DateTime picker</td>
+              </tr>
+              <tr>
+                <th scope="row">COLOR</th>
+                <td>Color picker</td>
+              </tr>
+              <tr>
+                <th scope="row">ENUM</th>
+                <td>
+                  Select dropdown (or radio choice) with predefined values
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">REFERENCE (LINK)</th>
+                <td>Select dropdown with search in the referenced table</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="db-data-source" class="col-12">
+          <h5 class="mt-5">Database : data source</h5>
+          <p>
+            The plugin provides robust server-side data processing capabilities
+            through specialized database data sources, optimized for handling
+            large datasets efficiently.
+          </p>
+          <h6>Client-Side vs. Server-Side Processing</h6>
+          <p>
+            AG Grid supports multiple row models for different data handling
+            requirements:
+          </p>
+
+          1.
+          <strong>
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/row-models/#client-side"
+              target="_blank"
+            >
+              Client-Side Row Model
+            </a>
+          </strong>
+          <ul>
+            <li>Loads all data into browser memory</li>
+            <li>Performs sorting, filtering, and pagination in the browser</li>
+            <li>Suitable for datasets up to several thousand rows</li>
+            <li>Used in previous examples with the row-data attribute</li>
+          </ul>
+
+          2.
+          <strong>
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/infinite-scrolling/"
+              target="_blank"
+            >
+              Infinite Row Model:
+            </a>
+          </strong>
+          <ul>
+            <li>Loads only visible rows plus a buffer</li>
+            <li>
+              Delegates sorting, filtering, and data retrieval to the server
+            </li>
+            <li>
+              Efficiently handles very large datasets (tens of thousands to
+              millions of rows)
+            </li>
+            <li>Implemented through the dbDatasource provider</li>
+          </ul>
+          <h6>Implementation</h6>
+          <p>
+            To configure a grid with server-side database integration, use
+            <code>datasource</code>
+            option with
+            <code>dbDatasource</code>
+            component :
+            <code>datasource="dbDatasource({table: 'mytable'})"</code>
+          </p>
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <div id="i8pn4a" class="d-flex mb-2">
+                <div id="ixelz7" class="flex-grow-1">
+                  <input
+                    type="text"
+                    id="ir87il"
+                    placeholder="Table name"
+                    z-bind="table_name"
+                    class="form-control"
+                  />
+                </div>
+                <div id="il8j83" class="flex">
+                  <button
+                    type="button"
+                    id="iz88p4"
+                    z-on-click="view.genTableDataSource()"
+                    class="btn btn-primary ms-2"
+                  >
+                    <span id="iueq1s">Load table</span>
+                  </button>
+                </div>
+              </div>
+              <div id="exemple-datasource"></div>
+            </div>
+            <div id="iawta6" class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="html">
+                <pre><!-- 
+<ag-grid 
+   row-model-type="infinite" 
+   datasource="dbDatasource({table: 'mytable'})"
+   >
+  
+  <ag-default-column resizable sortable floating-filter></ag-default-column>
+
+  <ag-column db-table="mytable" db-column="a_column"></ag-column>
+  <ag-column db-table="mytable" db-column="another_column"></ag-column>
+
+</ag-grid>
+              --></pre>
+              </code>
+            </div>
+          </div>
+          
+          <h6>Configuration Options</h6>
+<p>The <code>dbDatasource</code> provider accepts the following configuration parameters:</p>
+
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Parameter</th>
+                <th scope="col">Required</th>
+                <th scope="col">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">table</th>
+                <td>Yes</td>
+                <td>Database table name to query</td>
+              </tr>
+              <tr>
+                <th scope="row">schema</th>
+                <td>No</td>
+                <td>Database schema name (defaults to "public")</td>
+              </tr>
+              <tr>
+                <th scope="row">filter</th>
+                <td>No</td>
+                <td>Static filter conditions to apply to all requests</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+<p>Example with schema specification:</p>
+<code>
+htmldatasource="dbDatasource({schema: 'myschema', table: 'mytable'})"
+</code>
+<p>Example with static filter:</p>
+<code>htmldatasource="dbDatasource({table: 'mytable', filter: {mycol: {equalTo: 'avalue'}}})"</code>
+
+<h6>Dynamic Filtering</h6>
+
+<p>In addition to static filters defined during initialization, dynamic filters can be applied at runtime by setting the filter property on the grid element:</p>
+
+          <code lang="javascript">
+                <pre>
+// Apply a dynamic filter
+gridElement.filter = {mycol: {equalTo: "avalue"}};
+
+// Clear dynamic filter
+gridElement.filter = null;
+</pre>
+              </code>
+
+<p>Dynamic filters are combined with static filters and user-applied column filters to generate the final query sent to the database.</p>
+
+        </div>
+        <div id="visual-editor" class="col-12">
+          <h5 class="mt-5">Visual editor</h5>
+          <p>The AG Grid plugin integrates seamlessly with the Visual Editor interface, providing a low-code approach to grid implementation and configuration.
+</p>
+          <div id="iih82l" class="row justify-content-center">
+            <div
+              id="if8sql"
+              class="col-xxl-3 col-xl-3 col-lg-4 col-md-3 col-sm-5 col-6"
+            >
+              <img
+                src="images/grapesjs-aggrid-block.png"
+                id="iov671"
+                class="w-100"
+              />
+            </div>
+            <div
+              id="ic84xi"
+              class="col-12 col-xxl-9 col-xl-9 col-lg-8 col-md-9 col-sm-7"
+            >
+              <p id="iylfko">
+                To add a grid to your application screen:
+<ul>
+<li>Open the Visual Editor for your target screen</li>
+<li>Locate the AG Grid component in the component palette</li>
+<li>Drag and drop the AG Grid block onto the desired location in your screen</li>
+</ul>
+              </p>
+              <img
+                src="images/grapesjs-aggrid-render.png"
+                id="icvu3a"
+                class="w-100"
+              />
+              <p id="izqywh">
+                Upon insertion, the Visual Editor automatically creates a preconfigured grid with:
+<ul>
+<li>A base grid component with standard settings</li>
+<li>One default column configuration element</li>
+<li>One empty column ready for customization</li></ul>
+              </p>
+            </div>
+            <div
+              id="iilpqv"
+              class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 order-1 col-sm-6 col-6"
+            >
+              <img
+                src="images/grapesjs-aggrid-settings.png"
+                id="iluuey"
+                class="w-100"
+              />
+            </div>
+            <div
+              id="iabwjm"
+              class="col-12 col-lg-6 col-xxl-6 col-md-4 order-3 order-md-2"
+            >
+              <p id="ikanan">
+                The Visual Editor exposes the most commonly used configuration properties through the Properties panel:
+<ul>
+<li>Grid Properties: Core settings such as pagination, selection mode, and theme options</li>
+<li>Default Column Properties: Settings applied globally to all columns</li>
+<li>Column-Specific Properties: Individual column settings including field mapping, header text, and formatting options</li>
+</ul>
+              </p>
+              <p id="i03mcv">
+                <p>The Visual Editor provides intuitive controls for column operations:
+<ul>
+<li>Adding Columns: Click the [+] icon in the column's contextual toolbar to insert a new column after the selected column</li>
+<li>Column Duplication: Use the duplicate option in the contextual menu to create a copy of an existing column</li>
+<li>Column Removal: Select a column and use the delete option in the contextual toolbar</li>
+<li>Column Reordering: Drag columns to rearrange their order within the grid</li>
+</ul>
+The [+] button is also available on the grid's contextual toolbar to quickly add columns to the end of the grid.
+<p>
+  
+              </p>
+              <img
+                src="images/grapesjs-aggrid-plus.png"
+                id="ipzkfh"
+                class="w-100"
+              />
+            </div>
+            <div
+              id="i4tb3e"
+              class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 order-2 col-sm-6 col-6 order-md-3"
+            >
+              <img
+                src="images/grapesjs-aggrid-column-properties.png"
+                id="ih731e"
+                class="w-100"
+              />
+            </div>
+          </div>
+          <code lang="json"></code>
+        </div>
+        <div id="extensions" class="col-12">
+          <h4 class="mt-5">Extensions</h4>
+          <p>
+            The AG Grid plugin provides an extensible architecture that allows other plugins to enhance its functionality through a structured extension mechanism.
+
+          </p>
+          <p>
+            For example, the viewZ and database integration above are done using
+            extensions from the viewZ and dbadmin plugins
+          </p>
+        </div>
+        <div id="i8stsi-2" class="col-12">
+          <h5 class="mt-5">How to register an extension</h5>
+          <p id="i1juyh">
+            In your
+            <code>index.mjs</code>
+            file in your plugin, you can register your extension in the&nbsp;
+            <code>agGridExtensions</code>
+            extension of the ag-grid plugin
+          </p>
+          <code lang="javascript">
+            <pre id="iipkbh">
+// in your initPlugin function, use the onPluginLoad helper
+export const initPlugin = async ({ onPluginLoad }) =&gt; {
+
+  // this is called once all plugin are loaded
+  onPluginLoad(async ({pluginsData})=&gt;{
+    // check if the ag-grid agGridExtensions plugin slot is available :
+    if(pluginsData?.["ag-grid"]?.pluginSlots?.agGridExtensions){
+        // register your extension
+        pluginsData?.["ag-grid"]?.pluginSlots?.agGridExtensions.push( {
+            // name of my plugin
+            plugin: "my-plugin",
+            // give the path to fetch the extension file
+            extensionPath: "/plugin/:appName/myplugin/lib/ag-grid-myplugin.mjs"
+        })
+    }
+  }
+
+} ;
+    </pre
+            >
+          </code>
+        </div>
+        <div id="ijjqpn" class="col-12">
+          <h5 id="ic4yjj" class="mt-5">Add new components</h5>
+          <p id="iqsoqr">
+            If you want to add more
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/components/"
+              target="_blank"
+            >
+              custom components
+            </a>
+            to the standard components (such as
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/component-cell-renderer/"
+              target="_blank"
+            >
+              cell renderer
+            </a>
+            ,
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/cell-editors/"
+              target="_blank"
+            >
+              cell editor
+            </a>
+            ,
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/infinite-scrolling/#datasource"
+              target="_blank"
+            >
+              data source
+            </a>
+            , ...), add them in the&nbsp;
+            <code>components</code>
+            property of your extension
+          </p>
+          <div id="ishwmd-2" class="row">
+            <div class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid row-data="${lotr.main_characters}" id="i08c95-2">
+                <ag-column
+                  field="name"
+                  editable=""
+                  cell-renderer="LinkSearch"
+                ></ag-column>
+              </ag-grid>
+            </div>
+            <div id="iqzbkm" class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="javascript">
+                <pre id="iifu4e">
+// Your extension must export default structure 
+    // in which you can define components : 
+export default {
+  components: {
+      LinkSearch: (params)=&gt;{
+        return '&lt;a href="https://google.com/?q='+params.value+'"&gt;Search about '+params.value+'&lt;/a&gt;'
+      }
+  }
+}
+    </pre
+                >
+              </code>
+              <code lang="html">
+                <pre><!-- 
+<ag-grid row-data="${lotr.main_characters}">
+  <ag-column field="name"
+    cell-renderer="LinkSearch"
+  ></ag-column>
+</ag-grid>
+              --></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+        <div id="dynamic-components" class="col-12">
+          <h5 class="mt-5">Add dynamic components</h5>
+          <p>
+            Sometime you need to create dynamically the components. If your
+            component is a function and you give the component name with
+            arguments, the function will be called and the result of the
+            function will be used
+          </p>
+          <div id="iup07k" class="row">
+            <div class="col-12 col-lg-6">
+              <h6>Example</h6>
+              <ag-grid row-data="${lotr.main_characters}">
+                <ag-column
+                  field="name"
+                  editable=""
+                  cell-renderer="LinkSearchDyn(bind.com)"
+                ></ag-column>
+              </ag-grid>
+            </div>
+            <div id="icgs5g" class="col-12 col-lg-6">
+              <h6>Source code</h6>
+              <code lang="javascript">
+                <pre>
+// Your extension must export default structure 
+// in which you can define components : 
+export default {
+  components: {
+      LinkSearchDyn: (searchUrl)=&gt;{
+        return (params)=&gt;{
+          return '&lt;a href="https://'+searchUrl+'/?q='+params.value+'"&gt;Search about '+params.value+'&lt;/a&gt;'
+        }
+      }
+  }
+}
+    </pre
+                >
+              </code>
+              <code lang="html">
+                <pre><!-- 
+<ag-grid row-data="${lotr.main_characters}">
+  <ag-column field="name"
+    cell-renderer="LinkSearchDyn(bing.com)"
+  ></ag-column>
+</ag-grid>
+              --></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+        <div id="transform-column" class="col-12">
+          <h5 class="mt-5">Transform column option</h5>
+          <p id="iam1mj">
+            If you want to generate some
+            <a
+              href="https://www.ag-grid.com/javascript-data-grid/column-properties/"
+              target="_blank"
+            >
+              column options
+            </a>
+            automatically, you can implements the function&nbsp;
+            <code>columnOptionsTransformer</code>
+            in you extension.&nbsp;
+            <br />
+            For example, this is how the
+            <code>db-table</code>
+            and
+            <code>db-column</code>
+            add automatically column option to display the cell accordingly with
+            the database settings
+          </p>
+          <div id="i4d0ut" class="row">
+            <div id="iqanas" class="col-12">
+              <h6>Source code</h6>
+              <code lang="javascript">
+                <pre>
+// Your extension must export default structure 
+// in which you can define columnOptionsTransformer : 
+export default {
+  components: {
+      columnOptionsTransformer: async function({ options, html }){
+          // options contains the options set on &lt;ag-column&gt;
+          // html contains the HTML present inside the &lt;ag-column&gt;
+
+          //set whatever option you see fit
+      },
+  }
+}
+    </pre
+                >
+              </code>
+            </div>
+          </div>
+        </div>
+        <div id="extends-aggrid" class="col-12">
+          <h5 class="mt-5">Extends &lt;ag-grid&gt;</h5>
+          <p id="ipt7ej">
+            If you want to extends or modify the behaviour of the
+            <code>&lt;ag-grid&gt;</code>
+            component, you can implements the function
+            <code>extends</code>
+            in your extension.
+            <br />
+            This function will receive the class&nbsp;
+            <code>AgGridElement</code>
+            that manage the
+            <code>&lt;ag-grid&gt;</code>
+            element. You can use it to override or add some method of the class
+          </p>
+          <div class="row">
+            <div id="i5gsvn" class="col-12">
+              <h6>Source code</h6>
+              <code lang="javascript">
+                <pre id="izzyk1">
+// Your extension must export default structure 
+// in which you can define extends : 
+export default {
+  extends: (AgGridElement)=&gt;{
+    const originalAddEventListener = AgGridElement.prototype.addEventListener ;
+    AgGridElement.prototype.addEventListener = function(name, callback, options){
+      originalAddEventListener.bind(this)(name, (event)=&gt;{
+          // console.log when event is called
+          console.log("event" + name + "is called")
+          callback(event) ;
+      }, options)
+    }
+  }
+}
+    </pre
+                >
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
