@@ -3,7 +3,7 @@ import express from "express";
 export const prepareDatabase = async () => {
     
 }
-export const initPlugin = async ({ contextOfApp, hasCurrentPlugin, onPluginLoad }) => {
+export const initPlugin = async ({ contextOfApp, hasCurrentPlugin, loadPluginData }) => {
 
     const router = express.Router();
     
@@ -33,11 +33,11 @@ export const initPlugin = async ({ contextOfApp, hasCurrentPlugin, onPluginLoad 
         })();
     });
 
-    onPluginLoad(async ({pluginsData})=>{
+    loadPluginData(async ({pluginsData})=>{
         if(pluginsData?.["open-bamz-grapesjs-editor"]?.pluginSlots?.grapesJsEditor){
             pluginsData?.["open-bamz-grapesjs-editor"]?.pluginSlots?.grapesJsEditor.push( {
                 plugin: "ag-grid",
-                extensionPath: "/plugin/ag-grid/editor/grapesjs-aggrid-extension.mjs"
+                extensionPath: "/plugin/open-bamz-ag-grid/editor/grapesjs-aggrid-extension.mjs"
             })
         }
         
@@ -53,7 +53,7 @@ export const initPlugin = async ({ contextOfApp, hasCurrentPlugin, onPluginLoad 
         menu: [
             {
                 name: "admin", entries: [
-                    { name: "AG Grid", link: "/plugin/ag-grid/help/" }
+                    { name: "AG Grid", link: "/plugin/open-bamz-ag-grid/help/" }
                 ]
             }
         ],

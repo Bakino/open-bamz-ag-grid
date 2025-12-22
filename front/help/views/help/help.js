@@ -87,11 +87,11 @@ view.displayed = async ()=>{
     doHighlight();
 
     // @ts-ignore
-    window.agGridBamzComponents.LinkSearch = (params)=>{
+    agGridBamzComponents.LinkSearch = (params)=>{
         return '<a href="https://google.com/?q='+params.value+'">Search about '+params.value+'</a>'
     } ;
     // @ts-ignore
-    window.agGridBamzComponents.LinkSearchDyn = (searchUrl)=>{
+    agGridBamzComponents.LinkSearchDyn = (searchUrl)=>{
         return (params)=>{
           return '<a href="https://'+searchUrl+'/?q='+params.value+'">Search about '+params.value+'</a>'
         }

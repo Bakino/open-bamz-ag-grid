@@ -10,12 +10,18 @@
         }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/plugin/open-bamz-ag-grid/lib/ag-grid-lib.css" rel="stylesheet">
 </head>
 <body>
     
     <script type="module">
         import { startViewZ } from "https://cdn.jsdelivr.net/gh/Bakino/viewz@039a0e83e4f28992e7d1679e0a3e1f54cae45332/lib/frameworkz.mjs" ;
+        import { AgGridExtensions } from "/plugin/open-bamz-ag-grid/lib/ag-grid-extension.mjs" ;
+        //import viewzExtension from "https://cdn.jsdelivr.net/gh/Bakino/open-bamz-viewz@latest/front/lib/ag-grid-viewz.mjs" ;
 
+        AgGridExtensions.loadExtension({
+            url : `https://cdn.jsdelivr.net/gh/Bakino/open-bamz-viewz@latest/front/lib/ag-grid-viewz.mjs`
+        }) ;
 
         startViewZ("viewz.config.json") ;
     </script>

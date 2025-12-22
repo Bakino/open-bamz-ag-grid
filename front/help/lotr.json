@@ -1,0 +1,196 @@
+{
+  "main_characters": [
+    {
+      "name": "Frodo Baggins",
+      "race": "Hobbit",
+      "description": "The Ring-bearer and main protagonist",
+      "affiliations": ["Fellowship of the Ring", "Shire"]
+    },
+    {
+      "name": "Samwise Gamgee",
+      "race": "Hobbit",
+      "description": "Frodo's loyal gardener and companion",
+      "affiliations": ["Fellowship of the Ring", "Shire"]
+    },
+    {
+      "name": "Gandalf",
+      "race": "Maia (Wizard)",
+      "description": "Wise wizard who guides the Fellowship",
+      "affiliations": ["Fellowship of the Ring", "White Council", "Istari"]
+    },
+    {
+      "name": "Aragorn",
+      "race": "Human (Dúnedain)",
+      "description": "Heir to the throne of Gondor",
+      "affiliations": ["Fellowship of the Ring", "Rangers of the North", "Gondor"]
+    },
+    {
+      "name": "Legolas",
+      "race": "Elf",
+      "description": "Skilled archer from the Woodland Realm",
+      "affiliations": ["Fellowship of the Ring", "Mirkwood"]
+    },
+    {
+      "name": "Gimli",
+      "race": "Dwarf",
+      "description": "Warrior from the Lonely Mountain",
+      "affiliations": ["Fellowship of the Ring", "Erebor"]
+    }
+  ],
+  "supporting_characters": [
+    {
+      "name": "Merry Brandybuck",
+      "race": "Hobbit",
+      "description": "One of Frodo's companions",
+      "affiliations": ["Fellowship of the Ring", "Shire", "Rohan"]
+    },
+    {
+      "name": "Pippin Took",
+      "race": "Hobbit",
+      "description": "One of Frodo's companions",
+      "affiliations": ["Fellowship of the Ring", "Shire", "Gondor"]
+    },
+    {
+      "name": "Boromir",
+      "race": "Human",
+      "description": "Son of the Steward of Gondor",
+      "affiliations": ["Fellowship of the Ring", "Gondor"]
+    },
+    {
+      "name": "Galadriel",
+      "race": "Elf",
+      "description": "Lady of Lothlórien, bearer of Nenya",
+      "affiliations": ["Lothlórien", "White Council"]
+    },
+    {
+      "name": "Elrond",
+      "race": "Half-elven",
+      "description": "Lord of Rivendell, bearer of Vilya",
+      "affiliations": ["Rivendell", "White Council"]
+    },
+    {
+      "name": "Arwen",
+      "race": "Half-elven",
+      "description": "Daughter of Elrond, love interest of Aragorn",
+      "affiliations": ["Rivendell"]
+    },
+    {
+      "name": "Éowyn",
+      "race": "Human",
+      "description": "Shieldmaiden of Rohan",
+      "affiliations": ["Rohan"]
+    },
+    {
+      "name": "Éomer",
+      "race": "Human",
+      "description": "Third Marshal of the Riddermark, nephew of King Théoden",
+      "affiliations": ["Rohan"]
+    },
+    {
+      "name": "Théoden",
+      "race": "Human",
+      "description": "King of Rohan",
+      "affiliations": ["Rohan"]
+    },
+    {
+      "name": "Faramir",
+      "race": "Human",
+      "description": "Captain of Gondor, son of Denethor",
+      "affiliations": ["Gondor"]
+    },
+    {
+      "name": "Denethor",
+      "race": "Human",
+      "description": "Steward of Gondor",
+      "affiliations": ["Gondor"]
+    },
+    {
+      "name": "Treebeard",
+      "race": "Ent",
+      "description": "Oldest of the Ents, guardian of Fangorn Forest",
+      "affiliations": ["Ents"]
+    },
+    {
+      "name": "Bilbo Baggins",
+      "race": "Hobbit",
+      "description": "Frodo's uncle, former Ring-bearer",
+      "affiliations": ["Shire", "Rivendell"]
+    }
+  ],
+  "antagonists": [
+    {
+      "name": "Sauron",
+      "race": "Maia",
+      "description": "The Dark Lord, creator of the One Ring",
+      "affiliations": ["Mordor"]
+    },
+    {
+      "name": "Saruman",
+      "race": "Maia (Wizard)",
+      "description": "Corrupted wizard who allies with Sauron",
+      "affiliations": ["Isengard", "Istari (former)"]
+    },
+    {
+      "name": "Witch-king of Angmar",
+      "race": "Human (former)/Wraith",
+      "description": "Leader of the Nazgûl",
+      "affiliations": ["Mordor", "Nazgûl"]
+    },
+    {
+      "name": "Gollum/Sméagol",
+      "race": "Hobbit (former)",
+      "description": "Corrupted by the Ring, obsessed with reclaiming it",
+      "affiliations": []
+    },
+    {
+      "name": "Grima Wormtongue",
+      "race": "Human",
+      "description": "Advisor to King Théoden, servant of Saruman",
+      "affiliations": ["Isengard", "Rohan (former)"]
+    }
+  ],
+  "other_notable_characters": [
+    {
+      "name": "Tom Bombadil",
+      "race": "Unknown",
+      "description": "Mysterious figure in the Old Forest",
+      "affiliations": []
+    },
+    {
+      "name": "Glorfindel",
+      "race": "Elf",
+      "description": "Powerful elf-lord of Rivendell",
+      "affiliations": ["Rivendell"]
+    },
+    {
+      "name": "Celeborn",
+      "race": "Elf",
+      "description": "Lord of Lothlórien, husband of Galadriel",
+      "affiliations": ["Lothlórien"]
+    },
+    {
+      "name": "Radagast",
+      "race": "Maia (Wizard)",
+      "description": "Wizard with affinity for animals and nature",
+      "affiliations": ["Istari"]
+    },
+    {
+      "name": "Barliman Butterbur",
+      "race": "Human",
+      "description": "Innkeeper of the Prancing Pony in Bree",
+      "affiliations": ["Bree"]
+    },
+    {
+      "name": "Haldir",
+      "race": "Elf",
+      "description": "Marchwarden of Lothlórien",
+      "affiliations": ["Lothlórien"]
+    },
+    {
+      "name": "Círdan",
+      "race": "Elf",
+      "description": "Lord of the Grey Havens, bearer of Narya",
+      "affiliations": ["Grey Havens"]
+    }
+  ]
+}

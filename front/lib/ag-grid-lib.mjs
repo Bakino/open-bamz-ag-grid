@@ -1,26 +1,8 @@
 import { CopyRenderer } from './ag-grid-copy-renderer.mjs';
-
-export async function loadCss (url){
-    let head = document.head;
-    if(head.querySelector(`link[href="${url}"]`)){
-        return ;
-    }
-    return new Promise((resolve)=>{
-        var link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.type = "text/css";
-        link.href = url;
-        
-        
-        head.appendChild(link);
-        resolve() ;
-    }) ;
-}
+import { AgGridExtensions } from './ag-grid-extension.mjs';
 
 // @ts-ignore
 export const agGrid = await import( 'https://cdn.jsdelivr.net/npm/ag-grid-community@35/+esm');
-
-loadCss("/plugin/open-bamz-ag-grid/lib/ag-grid-lib.css",)
 
 export const agGridBamzComponents = {} ;
 
@@ -29,36 +11,48 @@ agGridBamzComponents.columnOptionsTransformers = [] ;
 
 const extensionExtendsClass = [] ;
 
+function loadExtension(ext){
+    console.log("load ag-grid extension", ext)
+    if(ext.columnOptionsTransformer){
+        agGridBamzComponents.columnOptionsTransformers.push({
+            plugin: ext.plugin,
+            transformer: ext.columnOptionsTransformer
+        }) ;
+    }
+    if(ext.components){
+        for(let [name, component] of Object.entries(ext.components)){
+            if(!agGridBamzComponents[name]){
+                agGridBamzComponents[name] = component ;
+            }else{
+                console.warn("Component already registered", name) ;
+            }
+        }
+    }
+    if(ext.extends){
+        extensionExtendsClass.push(ext.extends) ;
+    }
+}
+
 const waitForExtensionsLoaded = new Promise((resolve, reject)=>{
     try{
         console.log("start load ag-grid components extension")
-        // @ts-ignore
-        import(`/ag-grid/ag-grid-extensions`).then(async impEx=>{
-            const extensions = impEx.default ;
-            for(let ext of extensions){
-                console.log("load ag-grid extension", ext)
-                if(ext.columnOptionsTransformer){
-                    agGridBamzComponents.columnOptionsTransformers.push({
-                        plugin: ext.plugin,
-                        transformer: ext.columnOptionsTransformer
-                    }) ;
-                }
-                if(ext.components){
-                    for(let [name, component] of Object.entries(ext.components)){
-                        if(!agGridBamzComponents[name]){
-                            agGridBamzComponents[name] = component ;
-                        }else{
-                            console.warn("Component already registered", name) ;
-                        }
+        let promises = [] ;
+        for(let ext of AgGridExtensions.extensions){
+            if(ext.url){
+                promises.push(import(ext.url).then(impEx=>{
+                    let extensions = impEx.default ;
+                    if(!Array.isArray(extensions)){
+                        extensions = [extensions] ;     
                     }
-                }
-                if(ext.extends){
-                    extensionExtendsClass.push(ext.extends) ;
-                }
+                    for(let ext of extensions){
+                        loadExtension(ext) ;
+                    }
+                })) ;
+            }else{
+                loadExtension(ext) ;
             }
-            console.log("load ag-grid components extension DONE")
-            resolve() ;
-        }).catch(err=>reject(err)) ;
+        }
+        Promise.all(promises).then(()=>resolve()).catch(err=>reject(err)) ;
     }catch(err){
         reject(err) ;
     }
@@ -427,7 +421,7 @@ if(!customElements.get("ag-grid")){
 
 
         addEventListener(name, callback, options){
-            if(agGrid._ALL_EVENTS.includes(name)){
+            if(agGrid._GET_ALL_EVENTS().includes(name)){
                 this.getGrid().then(()=>{
                     this.grid.addEventListener(name, callback, options);
                 });
@@ -437,7 +431,7 @@ if(!customElements.get("ag-grid")){
         }
 
         removeEventListener(name, callback){
-            if(agGrid._ALL_EVENTS.includes(name)){
+            if(agGrid._GET_ALL_EVENTS().includes(name)){
                 this.getGrid().then(()=>{
                     this.grid.removeEventListener(name, callback);
                 });

@@ -7,47 +7,15 @@
       "path": "root",
       "subRoutes": [
         {
-          "url": "/settings",
-          "path": "settings"
-        },
-        {
           "url": "/welcome",
           "path": "welcome",
           "defaultChild": true
         },
         {
-          "url": "/messages",
-          "path": "messages"
-        },
-        {
           "url": "/help",
           "path": "help"
-        },
-        {
-          "url": "/templates",
-          "path": "templates"
         }
       ]
-    },
-     {
-      "url": "/popup-smtp{/:code}",
-      "path": "popup-smtp"
-    },
-    {
-      "url": "/popup-message-detail/:id",
-      "path": "popup-message-detail"
-    },
-    {
-      "url": "/popup-send-message",
-      "path": "popup-send-message"
-    },
-    {
-      "url": "/popup-template{/:code}",
-      "path": "popup-template"
-    },
-    {
-      "url": "/popup-template-send-mail/:template",
-      "path": "popup-template-send-mail"
     }
   ],
   "extensions": [
