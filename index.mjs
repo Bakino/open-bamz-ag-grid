@@ -47,7 +47,7 @@ export const initPlugin = async ({ contextOfApp, hasCurrentPlugin, loadPluginDat
         // path in which the plugin provide its front end files
         frontEndPath: "front",
         frontEndPublic: "lib",
-        frontEndLib: "lib/ag-grid-lib.mjs",
+        frontEndLib: "lib/ag-grid-loader.mjs",
         router: router,
         //menu entries
         menu: [

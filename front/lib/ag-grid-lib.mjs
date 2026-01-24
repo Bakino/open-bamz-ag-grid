@@ -29,41 +29,57 @@ function loadExtension(ext){
         }
     }
     if(ext.extends){
-        extensionExtendsClass.push(ext.extends) ;
+        if(customElements.get("ag-grid")){
+            //already loaded, extends now
+            ext.extends(customElements.get("ag-grid")) ;
+        }else{
+            //will load on class definition
+            extensionExtendsClass.push(ext.extends) ;
+        }
     }
 }
 
-const waitForExtensionsLoaded = new Promise((resolve, reject)=>{
+const extensionsAreLoaded = function(){
+    if(loadingGridExtensions){ return false ; }
+    return AgGridExtensions.extensions.every(ext=>ext.isLoaded) ;
+}
+
+let loadingGridExtensions = false ;
+const loadGridExtensions = async function(){
     try{
-        console.log("start load ag-grid components extension")
-        let promises = [] ;
+        if(loadingGridExtensions){
+            await new Promise((resolve)=>{ setTimeout(resolve, 100) ; }) ;
+            return await loadGridExtensions() ;
+        }
+        loadingGridExtensions = true ;
+        //console.log("start load db components extension")
         for(let ext of AgGridExtensions.extensions){
+            if(ext.isLoaded){ continue ; }
+            ext.isLoaded = true ;
             if(ext.url){
-                promises.push(import(ext.url).then(impEx=>{
-                    let extensions = impEx.default ;
-                    if(!Array.isArray(extensions)){
-                        extensions = [extensions] ;     
-                    }
-                    for(let ext of extensions){
-                        loadExtension(ext) ;
-                    }
-                })) ;
+                const impEx = await import(ext.url) ;
+                let extensions = impEx.default ;
+                if(!Array.isArray(extensions)){
+                    extensions = [extensions] ;     
+                }
+                for(let ext of extensions){
+                    loadExtension(ext) ;
+                }
             }else{
                 loadExtension(ext) ;
             }
         }
-        Promise.all(promises).then(()=>resolve()).catch(err=>reject(err)) ;
-    }catch(err){
-        reject(err) ;
+    }finally{
+        loadingGridExtensions = false ;
     }
-}) ;
+}
 
 
 async function transformColumnOptions({options, html}){
     for(let transformer of agGridBamzComponents.columnOptionsTransformers){
         if(transformer.transformer){
             try{
-                const transformedOptions = await transformer.transformer({options, html}) ;
+                const transformedOptions = await transformer.transformer({options, html, agGridBamzComponents}) ;
                 if(transformedOptions){
                     options = transformedOptions ;
                 }
@@ -123,6 +139,10 @@ function waitForElementVisibility(element) {
       
       checkVisibility();
     });
+}
+
+function isMobileDisplay(){
+    return window.innerWidth<1024 ;
 }
 
 const OPTIONS_NUMBER = [
@@ -303,7 +323,7 @@ if(!customElements.get("ag-grid")){
             // this is needed because the grid needs to be inserted in the document before it can be initialized
             await waitInsertedInDocument(this) ;
             await waitForElementVisibility(this) ;
-            await waitForExtensionsLoaded ;
+            await loadGridExtensions() ;
 
             // get column definitions from child elements
             const columnElements = Array.prototype.slice.call(this.querySelectorAll("ag-column"));
@@ -378,6 +398,24 @@ if(!customElements.get("ag-grid")){
             }
         
             this.grid = agGrid.createGrid(this, gridOptions);   
+            
+            // automatically dispatch a agGridEnterRow on double click on desktop and simple clich on mobile
+            this.grid.addEventListener("rowDoubleClicked", (ev)=>{
+                if(!isMobileDisplay()){
+                    const evEnter = new CustomEvent("agGridEnterRow", { detail: ev.data, bubbles: true, composed: true }) ;
+                    // @ts-ignore
+                    evEnter.data = ev.data ;
+                    this.dispatchEvent(evEnter);
+                }
+            }) ;
+            this.grid.addEventListener("rowClicked", (ev)=>{
+                if(isMobileDisplay()){
+                    const evEnter = new CustomEvent("agGridEnterRow", { detail: ev.data, bubbles: true, composed: true }) ;
+                    // @ts-ignore
+                    evEnter.data = ev.data ;
+                    this.dispatchEvent(evEnter);
+                }
+            }) ;
             this.dispatchEvent(new CustomEvent("agGridReady", { detail: this.grid, bubbles: true, composed: true }));
         }
 
@@ -421,6 +459,13 @@ if(!customElements.get("ag-grid")){
 
 
         addEventListener(name, callback, options){
+            if(!extensionsAreLoaded()){
+                //extension not loaded, wait all extension registered before adding event listener
+                loadGridExtensions().then(()=>{
+                    this.addEventListener(name, callback, options) ;
+                }) ;
+                return; 
+            }
             if(agGrid._GET_ALL_EVENTS().includes(name)){
                 this.getGrid().then(()=>{
                     this.grid.addEventListener(name, callback, options);
@@ -473,7 +518,7 @@ if(!customElements.get("ag-grid")){
     }
     customElements.define("ag-grid", AgGridElement);
 
-    waitForExtensionsLoaded.then(()=>{
+    loadGridExtensions().then(()=>{
         for(let extender of extensionExtendsClass){
             extender(AgGridElement) ;
         }
