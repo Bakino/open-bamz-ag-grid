@@ -45,7 +45,7 @@ const extensionsAreLoaded = function(){
 }
 
 let loadingGridExtensions = false ;
-const loadGridExtensions = async function(){
+export const loadGridExtensions = async function(){
     try{
         if(loadingGridExtensions){
             await new Promise((resolve)=>{ setTimeout(resolve, 100) ; }) ;
