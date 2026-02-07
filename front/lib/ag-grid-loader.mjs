@@ -21,6 +21,8 @@ export async function loadCss (url){
     }) ;
 }
 
-loadCss("/plugin/open-bamz-ag-grid/lib/ag-grid-lib.css",)
+const cssUrl = new URL('./ag-grid-lib.css', import.meta.url).href ;
+loadCss(cssUrl)
+//loadCss("/plugin/open-bamz-ag-grid/lib/ag-grid-lib.css",)
 
 export default agGrid ;

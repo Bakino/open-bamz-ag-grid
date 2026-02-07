@@ -40,6 +40,14 @@ export const initPlugin = async ({ contextOfApp, hasCurrentPlugin, loadPluginDat
                 extensionPath: "/plugin/open-bamz-ag-grid/editor/grapesjs-aggrid-extension.mjs"
             })
         }
+
+        // if(pluginsData?.["open-bamz-packaging"]?.pluginSlots?.urlsToDownload){
+        //     //always store dev that is the default lang
+        //     pluginsData?.["open-bamz-packaging"]?.pluginSlots?.urlsToDownload.push({
+        //         url: `/plugin/open-bamz-ag-grid/lib/ag-grid-lib.css`,
+        //         dest: `plugin/open-bamz-ag-grid/lib/ag-grid-lib.css`
+        //     });
+        // }
         
     })
 
